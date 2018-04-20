@@ -12,6 +12,7 @@ const browserSync = require('browser-sync').create();
 const webpack = require('webpack');
 const gulpLog = require('gulplog');
 const notifier = require('node-notifier');
+const rename = require('gulp-rename');
 
 let isWatch = true;
 
@@ -41,7 +42,23 @@ task('pug', function () {
     .pipe(gulp.dest(outDir()));
 });
 
+task('pug_main', function () {
+  return gulp.src("front/pug/index_main.pug").pipe(pug({pretty: true}))
+    .on("error", console.log)
+    .pipe(rename(function (path) {
+      ['_main'].forEach(e => {
+        if (path.basename.endsWith(e)) {
+          path.basename = path.basename.slice(0, -e.length);
+        }
+      });
+    }))
+    .pipe(gulp.dest(outDir()));
+});
+
+
 task('assets', ser('less', 'pug'));
+
+task('assets_main', ser('less', 'pug_main'));
 
 task('webpack', function (callback) {
 
@@ -106,7 +123,7 @@ task('build', ser(
   'clean', 'copy', function (callback) {
     isWatch = false;
     callback();
-  }, "webpack", "assets"
+  }, "webpack", "assets_main"
 ));
 
 task('server', function (back) {

@@ -36,7 +36,7 @@ public class TestRegisterImplTest extends AbstractDepinjectTestNg {
           try(ResultSet resultSet = preparedStatement.executeQuery()){
             while (resultSet.next()){
               String text = resultSet.getString("text");
-              Assert.assertEquals(text,"expected");
+              Assert.assertEquals(text,"qwerty");
             }
           }
         }
@@ -45,6 +45,6 @@ public class TestRegisterImplTest extends AbstractDepinjectTestNg {
     });
 
     String text = testRegister.get().getText();
-    Assert.assertEquals(text, "expectedText");
+    Assert.assertEquals(text, "qwerty");
   }
 }
