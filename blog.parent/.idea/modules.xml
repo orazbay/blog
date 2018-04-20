@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/blog.client/blog.client.iml" filepath="$PROJECT_DIR$/.idea/modules/blog.client/blog.client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/blog.controller/blog.controller.iml" filepath="$PROJECT_DIR$/.idea/modules/blog.controller/blog.controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/blog.parent.iml" filepath="$PROJECT_DIR$/.idea/modules/blog.parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/blog.register/blog.register.iml" filepath="$PROJECT_DIR$/.idea/modules/blog.register/blog.register.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/blog.stand/blog.stand.iml" filepath="$PROJECT_DIR$/.idea/modules/blog.stand/blog.stand.iml" />
+    </modules>
+  </component>
+</project>
