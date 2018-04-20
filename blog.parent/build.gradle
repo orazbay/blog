@@ -35,7 +35,7 @@ subprojects {
     main{
       java.srcDirs = ["src/main/java"]
       resources.srcDirs = ["src/main/resources"]
-      output.resourcesDir = ["build/classes/main"]
+      output.resourcesDir = "build/classes/main"
     }
     test{
       java.srcDirs = ["src/test/java"]
