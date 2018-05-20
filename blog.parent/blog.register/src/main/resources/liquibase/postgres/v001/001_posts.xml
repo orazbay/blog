@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet author="oraz" id="create-table-test_table">
+        <sql endDelimiter=";;"><![CDATA[
+      create table users(
+      id SERIAL PRIMARY KEY,
+      name varchar(40) not null,
+      surname varchar(40) not null,
+      email VARCHAR(40) UNIQUE NOT NULL ,
+      is_admin BOOLEAN DEFAULT FALSE,
+      password VARCHAR(40) NOT NULL
+      );;
+        insert into users(name,surname,email,is_admin,password) values('admin','admin','admin@gmail.com',TRUE ,'orazbay');;
+    ]]></sql>
+    </changeSet>
+
+</databaseChangeLog>

@@ -19,7 +19,7 @@ declare var $ :any;
                     <input type="text" placeholder="surname" [(ngModel)]="user.surname"/>
                     <input type="email" placeholder="email" [(ngModel)]="user.email"/>
                     <input type="password" placeholder="password" [(ngModel)]="user.password"/>
-                    <button type="submit">Sign Up</button>
+                    <input type="submit" value="Sign up">
                     <p class="message">Already registered? <a href="#" (click)="swapWithAnimation()">Sign In</a></p>
                 </form>
                 <form class="login-form">
@@ -165,7 +165,23 @@ export class LoginComponent implements OnInit {
         this.parameters["email"]=this.user.email;
         this.parameters["password"]=this.user.password;
 
-        this.httpService.post("/signUp",this.parameters).toPromise().then(
+        this.httpService.get("/signUp",this.parameters).toPromise().then(
+            result => {
+                this.error=result.json().token;
+            },
+            error => {
+                this.error = "Something is wrong";
+            }
+        )
+
+    }
+    signUp1(){
+        this.parameters["name"]="Orazbay";
+        this.parameters["surname"]="Ualesh";
+        this.parameters["email"]="aaa@.com";
+        this.parameters["password"]="fdsfsdfsd";
+
+        this.httpService.get("/signUp",this.parameters).toPromise().then(
             result => {
                 this.error=result.json().token;
             },
@@ -181,9 +197,10 @@ export class LoginComponent implements OnInit {
 
 
     ngOnInit(): void {
-        if(this.aRoute.snapshot.params["which"]=="signUp"){
-            this.swapWithAnimation();
-        }
+        this.signUp1();
+        // if(this.aRoute.snapshot.params["which"]=="signUp"){
+        //     this.swapWithAnimation();
+        // }
     }
 
 }

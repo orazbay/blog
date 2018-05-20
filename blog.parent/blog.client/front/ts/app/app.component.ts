@@ -12,9 +12,9 @@ import {Router} from "@angular/router";
                     <div class="right-area">
                         <ul class="not-signed" >
                             
-                            <li [routerLink]="['login', '']">sign in</li>
+                            <li routerLink='login'>sign in</li>
                             |
-                            <li [routerLink]="['login', 'signUp']"> sign up </li>
+                            <li routerLink="login"> sign up </li>
                         </ul><!-- right-area -->
                     </div><!-- right-area -->
 

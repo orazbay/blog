@@ -14,7 +14,7 @@ import {FormsModule} from "@angular/forms";
 const appRoutes:Routes=[
     {path:'',component:PostsComponent},
     {path:'post',component:SinglepostComponent},
-    {path:'login/:which',component:LoginComponent}
+    {path:'login',component:LoginComponent}
 ];
 
 @NgModule({
