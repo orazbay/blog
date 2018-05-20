@@ -3,15 +3,28 @@ import {AppComponent} from "./app.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {HttpService} from "../provider/HttpService";
 import {HttpModule} from "@angular/http";
+import {APP_BASE_HREF} from "@angular/common";
+
+import {Routes, RouterModule} from '@angular/router';
+import { SinglepostComponent} from "./singlepost.component";
+import {PostsComponent} from "./posts.component";
+import {LoginComponent} from "./login.component";
+import {FormsModule} from "@angular/forms";
+
+const appRoutes:Routes=[
+    {path:'',component:PostsComponent},
+    {path:'post',component:SinglepostComponent},
+    {path:'login/:which',component:LoginComponent}
+];
 
 @NgModule({
   imports:[
-    BrowserModule, HttpModule
+    FormsModule,BrowserModule, HttpModule,RouterModule.forRoot(appRoutes)
   ],
-  declarations:[AppComponent],
+  declarations:[AppComponent,SinglepostComponent,PostsComponent,LoginComponent],
   bootstrap:[AppComponent],
   entryComponents:[AppComponent],
-  providers:[HttpService]
+  providers:[HttpService,{provide: APP_BASE_HREF, useValue: '/'}]
 })
 export class AppModule {
 

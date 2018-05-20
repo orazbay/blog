@@ -13,7 +13,9 @@
             <option value="$PROJECT_DIR$/blog.client" />
             <option value="$PROJECT_DIR$/blog.controller" />
             <option value="$PROJECT_DIR$/blog.register" />
+            <option value="$PROJECT_DIR$/blog.server" />
             <option value="$PROJECT_DIR$/blog.stand" />
+            <option value="$PROJECT_DIR$/blog.war" />
           </set>
         </option>
       </GradleProjectSettings>

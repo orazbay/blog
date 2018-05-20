@@ -29,6 +29,7 @@ public class TestRegisterImplTest extends AbstractDepinjectTestNg {
 
     testDao.get().insertText("qwerty");
 
+
     Void execute = jdbcBlog.get().execute(new ConnectionCallback<Void>() {
       @Override
       public Void doInConnection(Connection connection) throws Exception {

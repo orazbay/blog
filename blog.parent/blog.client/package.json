@@ -1,12 +1,15 @@
 {
   "name": "education",
   "version": "0.0.1",
-  "description": "greetgo! help desk",
+  "description": "blog",
+  "main": "index.html",
   "scripts": {
     "gulp_clean": "gulp clean",
     "gulp_less": "gulp less",
-    "gulp_ser":"gulp ser",
-    "start":"gulp start"
+    "gulp_pug": "gulp pug",
+    "gulp_ser": "gulp ser",
+    "gulp_par": "gulp par",
+    "start": "gulp start"
   },
   "author": "greetgo!",
   "license": "ISC",
@@ -21,6 +24,7 @@
     "@angular/material": "2.0.0-beta.11",
     "@angular/platform-browser": "4.4.3",
     "@angular/platform-browser-dynamic": "4.4.3",
+    "@angular/router": "4.4.3",
     "@types/node": "7.0.5",
     "bootstrap": "3.3.7",
     "browser-sync": "2.18.8",
@@ -36,8 +40,11 @@
     "ts-loader": "2.0.1",
     "typescript": "2.2.1",
     "webpack": "2.2.1",
-    "raw-loader": "0.5.1",
-    "gulp-rename": "^1.2.2",
-    "zone": "^0.3.4"
+    "zone.js": "0.8.4",
+    "raw-loader": "^0.5.1",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^5.0.0",
+    "html-loader": "^0.5.1",
+    "gulp-rename": "^1.2.2"
   }
 }
