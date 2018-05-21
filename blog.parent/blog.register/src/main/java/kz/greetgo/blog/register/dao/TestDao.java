@@ -9,6 +9,8 @@ public interface TestDao {
   @Select("select text from test_table limit 1")
   String getTestText();
 
+
+
   @Insert("insert into test_table(text) values (#{text})")
   void insertText(@Param("text")String text);
 

@@ -1,6 +1,6 @@
 import {HttpService} from "../provider/HttpService";
 import {Component, OnInit} from "@angular/core";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {User} from "./user";
 declare var jquery:any;
 declare var $ :any;
@@ -11,10 +11,10 @@ declare var $ :any;
     selector: 'login_app',
     // templateUrl: require(`./post.component.html`)
     template: `
-        <h3>{{error}}</h3>
+        
         <div class="login-page">
             <div class="form">
-                <form class="register-form" (submit)="signUp()" >
+                <form class="register-form" (submit)="signUp1()" >
                     <input type="text" placeholder="name" [(ngModel)]="user.name"/>
                     <input type="text" placeholder="surname" [(ngModel)]="user.surname"/>
                     <input type="email" placeholder="email" [(ngModel)]="user.email"/>
@@ -28,6 +28,7 @@ declare var $ :any;
                     <button type="submit">login</button>
                     <p class="message">Not registered? <a href="#" (click)="swapWithAnimation()">Create an account</a></p>
                 </form>
+                <p class="message">{{error}}</p>
             </div>
         </div>
         
@@ -148,7 +149,7 @@ export class LoginComponent implements OnInit {
     user:User;
     parameters : { [key: string]: string} = {};
 
-    constructor(private httpService: HttpService,private aRoute:ActivatedRoute) {
+    constructor(private httpService: HttpService,private router:Router) {
     }
     error: string = "null";
 
@@ -167,7 +168,12 @@ export class LoginComponent implements OnInit {
 
         this.httpService.get("/signUp",this.parameters).toPromise().then(
             result => {
-                this.error=result.json().token;
+                if (result.json().responseCode==0){
+                    this.httpService.token=result.json().token;
+                    this.router.navigate([""]);
+                }else {
+                    this.error=result.json().responseMessage;
+                }
             },
             error => {
                 this.error = "Something is wrong";
@@ -181,9 +187,16 @@ export class LoginComponent implements OnInit {
         this.parameters["email"]="aaa@.com";
         this.parameters["password"]="fdsfsdfsd";
 
+        debugger;
+
         this.httpService.get("/signUp",this.parameters).toPromise().then(
             result => {
-                this.error=result.json().token;
+                if (result.json().responseCode==0){
+                    this.httpService.token=result.json().token;
+                    this.router.navigate([""]);
+                }else {
+                    this.error=result.json().responseMessage;
+                }
             },
             error => {
                 this.error = "Something is wrong";
@@ -197,7 +210,7 @@ export class LoginComponent implements OnInit {
 
 
     ngOnInit(): void {
-        this.signUp1();
+        // this.signUp1();
         // if(this.aRoute.snapshot.params["which"]=="signUp"){
         //     this.swapWithAnimation();
         // }

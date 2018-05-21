@@ -1,158 +1,69 @@
 package kz.greetgo.blog.stand.register_impl;
 
 
-import kz.greetgo.blog.controller.register.posts.Post;
+import kz.greetgo.blog.controller.models.Post;
+import kz.greetgo.blog.controller.register.BaseResponse;
+import kz.greetgo.blog.controller.register.posts.GetNotActivePostsResponse;
+import kz.greetgo.blog.controller.register.posts.PostCreateResponse;
 import kz.greetgo.blog.controller.register.posts.PostsRegister;
 import kz.greetgo.depinject.core.Bean;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
 @Bean
 public class PostRegisterImpl implements PostsRegister{
 
 
-  @Override
-  public Post getSinglePost() {
-    return new Post(
-            "Messi is the best",
-            "https://s-cdn.sportbox.ru/images/styles/upload/fp_fotos/52/63/d3da980337fa5ed3617500b3d9e1dd365ac0a87cbd33f279342212.jpg",
-            "Lionel Messi’s Net Worth\n" +
-                    "\n" +
-                    "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                    "\n" +
-                    "How Tall Is Lionel Messi?\n" +
-                    "\n" +
-                    "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                    "\n" +
-                    "Birthday\n" +
-                    "\n" +
-                    "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-    );
-  }
+    @Override
+    public Post getSinglePost() {
+        return null;
+    }
 
-  @Override
-  public ArrayList<Post> getPosts() {
-    return new ArrayList<>(Arrays.asList(
-            new Post(
-                    "Messi is the best",
-                    "https://s-cdn.sportbox.ru/images/styles/upload/fp_fotos/52/63/d3da980337fa5ed3617500b3d9e1dd365ac0a87cbd33f279342212.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),
-            new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),
-            new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),
-            new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),
-            new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),
-            new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),
-            new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            )
-    ));
-  }
+    @Override
+    public ArrayList<Post> getAllActivePosts() {
+
+        return new ArrayList<>(Arrays.asList(
+                new Post(1,"some title","https://images.cdn.fourfourtwo.com/sites/fourfourtwo.com/files/styles/image_landscape/public/lionelmessi-cropped_1hygeoo0ycfw61mgm8rnjkg3p5.jpg?itok=W-QBHf_4&c=87b6d99828d88c1b8ffe17a08d24fc7d","Lionel Messi is the \"best player there is and there ever will be\" as head coach Ernesto Valverde heaped praise on the Barcelona star.\n" +
+                        "Five-time Ballon d'Or winner Messi scored a brace in Barcelona's 5-0 rout of Real Betis in LaLiga action on Sunday.\n" +
+                        "Messi took his tally to 19 league goals for the season, while Luis Suarez also netted twice after Ivan Rakitic's opener.\n" +
+                        "\"You have to enjoy him,\" Valverde said of Messi. \"We have been able to live his era.\n" +
+                        "\"I have suffered because of him and I know what that is like. Now I can enjoy it.\n" +
+                        "\"It is an event to watch him every day. He is the best player there is and there ever will be.\"",10,true),
+                new Post(1,"some title","https://images.cdn.fourfourtwo.com/sites/fourfourtwo.com/files/styles/image_landscape/public/lionelmessi-cropped_1hygeoo0ycfw61mgm8rnjkg3p5.jpg?itok=W-QBHf_4&c=87b6d99828d88c1b8ffe17a08d24fc7d","Lionel Messi is the \"best player there is and there ever will be\" as head coach Ernesto Valverde heaped praise on the Barcelona star.\n" +
+                        "Five-time Ballon d'Or winner Messi scored a brace in Barcelona's 5-0 rout of Real Betis in LaLiga action on Sunday.\n" +
+                        "Messi took his tally to 19 league goals for the season, while Luis Suarez also netted twice after Ivan Rakitic's opener.\n" +
+                        "\"You have to enjoy him,\" Valverde said of Messi. \"We have been able to live his era.\n" +
+                        "\"I have suffered because of him and I know what that is like. Now I can enjoy it.\n" +
+                        "\"It is an event to watch him every day. He is the best player there is and there ever will be.\"",10,true),
+                new Post(1,"some title","https://images.cdn.fourfourtwo.com/sites/fourfourtwo.com/files/styles/image_landscape/public/lionelmessi-cropped_1hygeoo0ycfw61mgm8rnjkg3p5.jpg?itok=W-QBHf_4&c=87b6d99828d88c1b8ffe17a08d24fc7d","Lionel Messi is the \"best player there is and there ever will be\" as head coach Ernesto Valverde heaped praise on the Barcelona star.\n" +
+                        "Five-time Ballon d'Or winner Messi scored a brace in Barcelona's 5-0 rout of Real Betis in LaLiga action on Sunday.\n" +
+                        "Messi took his tally to 19 league goals for the season, while Luis Suarez also netted twice after Ivan Rakitic's opener.\n" +
+                        "\"You have to enjoy him,\" Valverde said of Messi. \"We have been able to live his era.\n" +
+                        "\"I have suffered because of him and I know what that is like. Now I can enjoy it.\n" +
+                        "\"It is an event to watch him every day. He is the best player there is and there ever will be.\"",10,true),
+                new Post(1,"some title","https://images.cdn.fourfourtwo.com/sites/fourfourtwo.com/files/styles/image_landscape/public/lionelmessi-cropped_1hygeoo0ycfw61mgm8rnjkg3p5.jpg?itok=W-QBHf_4&c=87b6d99828d88c1b8ffe17a08d24fc7d","Lionel Messi is the \"best player there is and there ever will be\" as head coach Ernesto Valverde heaped praise on the Barcelona star.\n" +
+                        "Five-time Ballon d'Or winner Messi scored a brace in Barcelona's 5-0 rout of Real Betis in LaLiga action on Sunday.\n" +
+                        "Messi took his tally to 19 league goals for the season, while Luis Suarez also netted twice after Ivan Rakitic's opener.\n" +
+                        "\"You have to enjoy him,\" Valverde said of Messi. \"We have been able to live his era.\n" +
+                        "\"I have suffered because of him and I know what that is like. Now I can enjoy it.\n" +
+                        "\"It is an event to watch him every day. He is the best player there is and there ever will be.\"",10,true)
+        ));
+    }
+
+    @Override
+    public GetNotActivePostsResponse getNotActivePosts(String token) {
+        return null;
+    }
+
+    @Override
+    public BaseResponse acceptPost(int postId, String token) {
+        return null;
+    }
+
+    @Override
+    public PostCreateResponse createPost(String token, String title, String image_title_url, String content) {
+        return null;
+    }
 }

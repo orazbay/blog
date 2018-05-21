@@ -1,158 +1,95 @@
-package kz.greetgo.blog.stand.register_impl;
+package kz.greetgo.blog.register.impl;
 
 
-import kz.greetgo.blog.controller.register.posts.Post;
+import kz.greetgo.blog.controller.models.Post;
+import kz.greetgo.blog.controller.models.User;
+import kz.greetgo.blog.controller.register.BaseResponse;
+import kz.greetgo.blog.controller.register.posts.GetNotActivePostsResponse;
+import kz.greetgo.blog.controller.register.posts.PostCreateResponse;
 import kz.greetgo.blog.controller.register.posts.PostsRegister;
+import kz.greetgo.blog.register.dao.PostsDao;
+import kz.greetgo.blog.register.dao.UsersDao;
 import kz.greetgo.depinject.core.Bean;
+import kz.greetgo.depinject.core.BeanGetter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 @Bean
 public class PostRegisterImpl implements PostsRegister{
+    public BeanGetter<UsersDao> usersDaoBeanGetter;
+    public BeanGetter<PostsDao> postsDaoBeanGetter;
 
 
-  @Override
-  public Post getSinglePost() {
-    return new Post(
-            "Messi is the best",
-            "https://s-cdn.sportbox.ru/images/styles/upload/fp_fotos/52/63/d3da980337fa5ed3617500b3d9e1dd365ac0a87cbd33f279342212.jpg",
-            "Lionel Messi’s Net Worth\n" +
-                    "\n" +
-                    "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                    "\n" +
-                    "How Tall Is Lionel Messi?\n" +
-                    "\n" +
-                    "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                    "\n" +
-                    "Birthday\n" +
-                    "\n" +
-                    "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-    );
-  }
+    @Override
+    public Post getSinglePost() {
+        return null;
+    }
 
-  @Override
-  public ArrayList<Post> getPosts() {
-    return new ArrayList<>(Arrays.asList(
-            new Post(
-                    "Messi is the best",
-                    "https://s-cdn.sportbox.ru/images/styles/upload/fp_fotos/52/63/d3da980337fa5ed3617500b3d9e1dd365ac0a87cbd33f279342212.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),
-            new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),
-            new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),
-            new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),
-            new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),
-            new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            ),
-            new Post(
-                    "Messi is the best",
-                    "https://www.biography.com/.image/t_share/MTQ4MDU5NDU0MzgwNzEzNDk0/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg",
-                    "Lionel Messi’s Net Worth\n" +
-                            "\n" +
-                            "As of 2017 Lionel Messi is worth an estimated $80 million, taking into account his salary plus bonuses and endorsements, according to Forbes.com. That makes Messi the second highest-paid soccer player and the third highest-paid athlete in the world, after fellow soccer great Cristiano Ronaldo and basketball star LeBron James. Almost universally regarded as the best soccer player in the game, Messi has become the commercial face of soccer with endorsements from Adidas, Pepsi, EA Sports and Turkish Airways, among other companies.\n" +
-                            "\n" +
-                            "How Tall Is Lionel Messi?\n" +
-                            "\n" +
-                            "Lionel Messi is 5 feet, 7 inches tall and weighs 72 kilograms (159 pounds). With his short stature, speed and relentless attacking style, Messi has drawn comparisons to another famous Argentinian footballer: Diego Maradona.\n" +
-                            "\n" +
-                            "Birthday\n" +
-                            "\n" +
-                            "Lionel Messi was born on June 24, 1987, in Rosario, Argentina."
-            )
-    ));
-  }
+    @Override
+    public ArrayList<Post> getAllActivePosts() {
+        return postsDaoBeanGetter.get().getActivePosts();
+    }
+
+    @Override
+    public GetNotActivePostsResponse getNotActivePosts(String token) {
+        GetNotActivePostsResponse response=new GetNotActivePostsResponse();
+
+        User admin=usersDaoBeanGetter.get().getUserByToken(token);
+
+        if (admin==null){
+            setUnauthResponse(response);
+        }else {
+            if (admin.is_admin){
+                response.posts=postsDaoBeanGetter.get().getNotActivePosts();
+                response.setResponseCode(BaseResponse.RESPONSE_CODE_SUCCESS);
+            }else {
+                response.setResponseCode(BaseResponse.RESPONSE_CODE_FAIL);
+                response.setResponseMessage(BaseResponse.RESPONSE_NOT_ADMIN);
+            }
+        }
+
+        return response;
+    }
+
+    @Override
+    public BaseResponse acceptPost(int postId,String token) {
+        BaseResponse response=new BaseResponse();
+
+        User admin=usersDaoBeanGetter.get().getUserByToken(token);
+
+        if (admin==null){
+            setUnauthResponse(response);
+        }else {
+            if (admin.is_admin){
+                postsDaoBeanGetter.get().updateIsActive(postId);
+                response.setResponseCode(BaseResponse.RESPONSE_CODE_SUCCESS);
+            }else {
+                response.setResponseCode(BaseResponse.RESPONSE_CODE_FAIL);
+                response.setResponseMessage(BaseResponse.RESPONSE_NOT_ADMIN);
+            }
+        }
+
+        return response;
+    }
+
+
+    @Override
+    public PostCreateResponse createPost(String token, String title, String image_title_url, String content) {
+      PostCreateResponse response=new PostCreateResponse();
+        User author=usersDaoBeanGetter.get().getUserByToken(token);
+        if (author==null){
+            setUnauthResponse(response);
+        }else {
+            postsDaoBeanGetter.get().insertPost(title,image_title_url,content,author.id);
+
+            response.setResponseCode(BaseResponse.RESPONSE_CODE_SUCCESS);
+        }
+        return response;
+    }
+
+    private void setUnauthResponse(BaseResponse response){
+        response.setResponseCode(BaseResponse.RESPONSE_CODE_FAIL);
+        response.setResponseMessage(PostCreateResponse.RESPONSE_UNAUTHORIZED_USER);
+    }
 }
+

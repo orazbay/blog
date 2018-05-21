@@ -24,7 +24,7 @@ const appRoutes:Routes=[
   declarations:[AppComponent,SinglepostComponent,PostsComponent,LoginComponent],
   bootstrap:[AppComponent],
   entryComponents:[AppComponent],
-  providers:[HttpService,{provide: APP_BASE_HREF, useValue: '/'}]
+  providers:[HttpService,{provide: APP_BASE_HREF, useValue: '/blog/blog'}]
 })
 export class AppModule {
 

@@ -5,6 +5,9 @@ public class BaseResponse {
     public static final int RESPONSE_CODE_FAIL=1;
 
 
+    public static String RESPONSE_NOT_ADMIN="NOT ADMIN";
+
+
     private int responseCode;
     private String responseMessage;
 

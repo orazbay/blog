@@ -1,26 +1,32 @@
 package kz.greetgo.blog.register.dao;
 
 
-import kz.greetgo.blog.controller.models.User;
-import org.apache.ibatis.annotations.*;
+import kz.greetgo.blog.controller.models.Post;
 
-public interface UsersDao {
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+
+import java.util.ArrayList;
+
+public interface PostsDao {
 
 
-  @Insert("insert into users(name, surname, email, password) values (#{name},#{surname},#{email},#{password})")
-  void insertUser(
-                    @Param("name") String name,
-                    @Param("surname") String surname,
-                    @Param("email") String email,
-                    @Param("password") String password);
-  @Update("update users set token = #{token} where email = #{email}")
-  void updateToken(@Param("email") String email,
-                   @Param("token") String token);
+  @Insert("insert into posts(title, image_title_url, content, author_id)" +
+          " values (#{title},#{image_title_url},#{content},#{author_id})")
+  void insertPost(
+          @Param("title") String title,
+          @Param("image_title_url") String image_title_url,
+          @Param("content") String content,
+          @Param("author_id") int author_id);
 
-  @Select("select email from users where email = #{email}")
-  String checkEmail(@Param("email") String email);
+  @Select("select * from posts where is_active = TRUE")
+  ArrayList<Post> getActivePosts();
 
-  @Select("select * from users where email = #{email}")
-  User getUser(@Param("email") String email);
+  @Select("select * from posts where is_active = FALSE")
+  ArrayList<Post> getNotActivePosts();
 
+  @Update("update posts set is_active = TRUE where id = #{postId}")
+  void updateIsActive(@Param("postId") int postId);
 }

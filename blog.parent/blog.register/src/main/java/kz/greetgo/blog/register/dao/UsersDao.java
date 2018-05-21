@@ -1,15 +1,32 @@
 package kz.greetgo.blog.register.dao;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
 
-public interface TestDao {
+import kz.greetgo.blog.controller.models.User;
+import org.apache.ibatis.annotations.*;
 
-  @Select("select text from test_table limit 1")
-  String getTestText();
+public interface UsersDao {
 
-  @Insert("insert into test_table(text) values (#{text})")
-  void insertText(@Param("text")String text);
+
+  @Insert("insert into users(name, surname, email, password) values (#{name},#{surname},#{email},#{password})")
+  void insertUser(
+                    @Param("name") String name,
+                    @Param("surname") String surname,
+                    @Param("email") String email,
+                    @Param("password") String password);
+
+  @Update("update users set token = #{token} where email = #{email}")
+  void updateToken(@Param("email") String email,
+                   @Param("token") String token);
+
+  @Select("select email from users where email = #{email}")
+  String checkEmail(@Param("email") String email);
+
+  @Select("select * from users where email = #{email}")
+  User getUser(@Param("email") String email);
+
+  @Select("select * from users where token = #{token}")
+  User getUserByToken(@Param("token") String token);
+
+
 
 }

@@ -18,7 +18,16 @@ public class LoginController implements Controller{
   @ToJson
   @AsIs
   @Mapping("/signUp")
-  public LoginResponse getText(@Par("name") String name, @Par("surname") String surname, @Par("email") String email, @Par("password") String password){
+  public LoginResponse signUp(@Par("name") String name, @Par("surname") String surname, @Par("email") String email, @Par("password") String password){
+    System.out.println(name+","+surname+","+password+","+email);
     return loginRegisterBeanGetter.get().signUp(name,surname,email,password);
+  }
+
+  @ToJson
+  @AsIs
+  @Mapping("/signIn")
+  public LoginResponse signIn(@Par("email") String email, @Par("password") String password){
+    System.out.println(password+","+email);
+    return loginRegisterBeanGetter.get().signIn(email,password);
   }
 }

@@ -6,11 +6,14 @@ import kz.greetgo.depinject.core.Bean;
 
 @Bean
 public class LoginRegisterImpl implements LoginRegister{
+
   @Override
   public LoginResponse signUp(String name, String surname, String email, String password) {
-    LoginResponse loginResponse=new LoginResponse();
-    loginResponse.setResponseCode(0);
-    loginResponse.token="some token";
-    return loginResponse;
+    return null;
+  }
+
+  @Override
+  public LoginResponse signIn(String email, String password) {
+    return null;
   }
 }

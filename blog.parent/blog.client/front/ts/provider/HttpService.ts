@@ -49,6 +49,7 @@ export class HttpService {
     }
 
     public url(urlSuffix: string): string {
+        // return "http://localhost:8080/blog/api"+ urlSuffix;
         return this.prefix() + urlSuffix;
     }
 

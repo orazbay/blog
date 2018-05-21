@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
         
         <div class="blog-posts">
             <div class="single-post about-author" *ngFor="let post of posts">
-                <div class="image-wrapper"><img src="{{post.imageUrl}}" alt="Blog Image"></div>
+                <div class="image-wrapper"><img src="{{post.image_title_url}}" alt="Blog Image"></div>
                 <p class="date"><em>Monday, October 13, 2017</em></p>
                 <h3 class="title"><a href="#"><b class="light-color">
                     {{post.title}}
@@ -1061,9 +1061,12 @@ export class PostsComponent implements OnInit{
     constructor(private router:Router,private httpService:HttpService) { }
     posts:Post[];
     error:string="null";
+    parameters : { [key: string]: string} = {};
 
     ngOnInit(): void {
-        this.httpService.get("/getPosts").toPromise().then(
+        this.parameters["token"]="-1343743360|1526878925499";
+        this.httpService.get("/getAllActivePosts",this.parameters).toPromise().then(
+
             result => {
                 console.log("privet");
                 this.posts = result.json();
